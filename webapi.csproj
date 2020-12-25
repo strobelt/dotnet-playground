@@ -4,5 +4,12 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="web\**" />
+    <Content Remove="web\**" />
+    <EmbeddedResource Remove="web\**" />
+    <None Remove="web\**" />
+  </ItemGroup>
+
 
 </Project>
