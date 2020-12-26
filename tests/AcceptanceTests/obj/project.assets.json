@@ -2,6 +2,46 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "FluentAssertions/5.10.3": {
+        "type": "package",
+        "dependencies": {
+          "System.Configuration.ConfigurationManager": "4.4.0"
+        },
+        "compile": {
+          "lib/netcoreapp2.1/FluentAssertions.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/FluentAssertions.dll": {}
+        }
+      },
+      "FluentAssertions.Web/1.0.125": {
+        "type": "package",
+        "dependencies": {
+          "FluentAssertions": "5.9.0",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/FluentAssertions.Web.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentAssertions.Web.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.TestHost/3.1.10": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.Pipelines": "4.7.3"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.TestHost.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.TestHost.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.CodeCoverage/16.5.0": {
         "type": "package",
         "compile": {
@@ -596,6 +636,18 @@
           "lib/netstandard1.5/System.ComponentModel.TypeConverter.dll": {}
         }
       },
+      "System.Configuration.ConfigurationManager/4.4.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Cryptography.ProtectedData": "4.4.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
+        }
+      },
       "System.Diagnostics.Debug/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -761,6 +813,15 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.IO.FileSystem.Primitives.dll": {}
+        }
+      },
+      "System.IO.Pipelines/4.7.3": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/System.IO.Pipelines.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.IO.Pipelines.dll": {}
         }
       },
       "System.Linq/4.3.0": {
@@ -1017,6 +1078,21 @@
           "lib/netstandard1.3/System.Runtime.Serialization.Primitives.dll": {}
         }
       },
+      "System.Security.Cryptography.ProtectedData/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "System.Text.Encoding/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1225,10 +1301,87 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
+      },
+      "WebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/WebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WebApi.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
   "libraries": {
+    "FluentAssertions/5.10.3": {
+      "sha512": "gVPEVp1hLVqcv+7Q2wiDf7kqCNn7+bQcQ0jbJ2mcRT6CeRoZl1tNkqvzSIhvekyldDptk77j1b03MXTTRIqqpg==",
+      "type": "package",
+      "path": "fluentassertions/5.10.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "FluentAssertions.png",
+        "fluentassertions.5.10.3.nupkg.sha512",
+        "fluentassertions.nuspec",
+        "lib/net45/FluentAssertions.dll",
+        "lib/net45/FluentAssertions.pdb",
+        "lib/net45/FluentAssertions.xml",
+        "lib/net47/FluentAssertions.dll",
+        "lib/net47/FluentAssertions.pdb",
+        "lib/net47/FluentAssertions.xml",
+        "lib/netcoreapp2.0/FluentAssertions.dll",
+        "lib/netcoreapp2.0/FluentAssertions.pdb",
+        "lib/netcoreapp2.0/FluentAssertions.xml",
+        "lib/netcoreapp2.1/FluentAssertions.dll",
+        "lib/netcoreapp2.1/FluentAssertions.pdb",
+        "lib/netcoreapp2.1/FluentAssertions.xml",
+        "lib/netstandard1.3/FluentAssertions.dll",
+        "lib/netstandard1.3/FluentAssertions.pdb",
+        "lib/netstandard1.3/FluentAssertions.xml",
+        "lib/netstandard1.6/FluentAssertions.dll",
+        "lib/netstandard1.6/FluentAssertions.pdb",
+        "lib/netstandard1.6/FluentAssertions.xml",
+        "lib/netstandard2.0/FluentAssertions.dll",
+        "lib/netstandard2.0/FluentAssertions.pdb",
+        "lib/netstandard2.0/FluentAssertions.xml",
+        "lib/netstandard2.1/FluentAssertions.dll",
+        "lib/netstandard2.1/FluentAssertions.pdb",
+        "lib/netstandard2.1/FluentAssertions.xml"
+      ]
+    },
+    "FluentAssertions.Web/1.0.125": {
+      "sha512": "kmPKEjWwxq/ZM8x7shBZVXlBb6PnMCxO6agXjQbQoRrcP9hNzjTERnQ33OMvTIcyGWH0LR8ZB3XasVWg7RtrwQ==",
+      "type": "package",
+      "path": "fluentassertions.web/1.0.125",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluentassertions.web.1.0.125.nupkg.sha512",
+        "fluentassertions.web.nuspec",
+        "lib/netstandard2.0/FluentAssertions.Web.dll",
+        "lib/netstandard2.0/FluentAssertions.Web.xml"
+      ]
+    },
+    "Microsoft.AspNetCore.TestHost/3.1.10": {
+      "sha512": "O1/Na0hYP2iQAEaaPhKFxUDOn9cKuvdtXS8PfvEBxMA2xsu16wfXiIzKiJaAIC+0MavgXwPw4/YB2wxv8rJ/gQ==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.testhost/3.1.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.TestHost.dll",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.TestHost.xml",
+        "microsoft.aspnetcore.testhost.3.1.10.nupkg.sha512",
+        "microsoft.aspnetcore.testhost.nuspec"
+      ]
+    },
     "Microsoft.CodeCoverage/16.5.0": {
       "sha512": "PM5YLtyN45EyUGePJpaNogndlaQPrMgQQXHKMhMESC6KfSVvt+j7+dxBi8NYC6X6dZVysf7ngwhSW3wwvPJRSQ==",
       "type": "package",
@@ -2325,6 +2478,27 @@
         "system.componentmodel.typeconverter.nuspec"
       ]
     },
+    "System.Configuration.ConfigurationManager/4.4.0": {
+      "sha512": "gWwQv/Ug1qWJmHCmN17nAbxJYmQBM/E94QxKLksvUiiKB1Ld3Sc/eK1lgmbSjDFxkQhVuayI/cGFZhpBSodLrg==",
+      "type": "package",
+      "path": "system.configuration.configurationmanager/4.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Configuration.ConfigurationManager.dll",
+        "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll",
+        "ref/net461/System.Configuration.ConfigurationManager.dll",
+        "ref/net461/System.Configuration.ConfigurationManager.xml",
+        "ref/netstandard2.0/System.Configuration.ConfigurationManager.dll",
+        "ref/netstandard2.0/System.Configuration.ConfigurationManager.xml",
+        "system.configuration.configurationmanager.4.4.0.nupkg.sha512",
+        "system.configuration.configurationmanager.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Diagnostics.Debug/4.3.0": {
       "sha512": "ZUhUOdqmaG5Jk3Xdb8xi5kIyQYAA4PnTNlHx1mu9ZY3qv4ELIdKbnL/akbGaKi2RnNUWaZsAs31rvzFdewTj2g==",
       "type": "package",
@@ -2834,6 +3008,34 @@
         "ref/xamarinwatchos10/_._",
         "system.io.filesystem.primitives.4.3.0.nupkg.sha512",
         "system.io.filesystem.primitives.nuspec"
+      ]
+    },
+    "System.IO.Pipelines/4.7.3": {
+      "sha512": "zykThu9scJyg2Yeg27GMZCbjzniIsmjtNP5x6kQCd/8rEeKXRy20fP2NOMS7xQ+0pS/E85LZQA+K1aoQLxiUdw==",
+      "type": "package",
+      "path": "system.io.pipelines/4.7.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.IO.Pipelines.dll",
+        "lib/net461/System.IO.Pipelines.xml",
+        "lib/netcoreapp3.0/System.IO.Pipelines.dll",
+        "lib/netcoreapp3.0/System.IO.Pipelines.xml",
+        "lib/netstandard1.3/System.IO.Pipelines.dll",
+        "lib/netstandard1.3/System.IO.Pipelines.xml",
+        "lib/netstandard2.0/System.IO.Pipelines.dll",
+        "lib/netstandard2.0/System.IO.Pipelines.xml",
+        "ref/net461/System.IO.Pipelines.dll",
+        "ref/net461/System.IO.Pipelines.xml",
+        "ref/netcoreapp2.0/System.IO.Pipelines.dll",
+        "ref/netcoreapp2.0/System.IO.Pipelines.xml",
+        "system.io.pipelines.4.7.3.nupkg.sha512",
+        "system.io.pipelines.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Linq/4.3.0": {
@@ -3861,6 +4063,47 @@
         "system.runtime.serialization.primitives.nuspec"
       ]
     },
+    "System.Security.Cryptography.ProtectedData/4.4.0": {
+      "sha512": "cJV7ScGW7EhatRsjehfvvYVBvtiSMKgN8bOVI0bQhnF5bU7vnHVIsH49Kva7i7GWaWYvmEzkYVk1TC+gZYBEog==",
+      "type": "package",
+      "path": "system.security.cryptography.protecteddata/4.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Security.Cryptography.ProtectedData.dll",
+        "lib/net461/System.Security.Cryptography.ProtectedData.dll",
+        "lib/netstandard1.3/System.Security.Cryptography.ProtectedData.dll",
+        "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Security.Cryptography.ProtectedData.dll",
+        "ref/net461/System.Security.Cryptography.ProtectedData.dll",
+        "ref/net461/System.Security.Cryptography.ProtectedData.xml",
+        "ref/netstandard1.3/System.Security.Cryptography.ProtectedData.dll",
+        "ref/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
+        "ref/netstandard2.0/System.Security.Cryptography.ProtectedData.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/win/lib/net46/System.Security.Cryptography.ProtectedData.dll",
+        "runtimes/win/lib/net461/System.Security.Cryptography.ProtectedData.dll",
+        "runtimes/win/lib/netstandard1.3/System.Security.Cryptography.ProtectedData.dll",
+        "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
+        "system.security.cryptography.protecteddata.4.4.0.nupkg.sha512",
+        "system.security.cryptography.protecteddata.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Text.Encoding/4.3.0": {
       "sha512": "BiIg+KWaSDOITze6jGQynxg64naAPtqGHBwDrLaCtixsa5bKiR8dpPOHA7ge3C0JJQizJE+sfkz1wV+BAKAYZw==",
       "type": "package",
@@ -4562,13 +4805,22 @@
         "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xmldocument.nuspec"
       ]
+    },
+    "WebApi/1.0.0": {
+      "type": "project",
+      "path": "../../src/WebApi.csproj",
+      "msbuildProject": "../../src/WebApi.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "FluentAssertions >= 5.10.3",
+      "FluentAssertions.Web >= 1.0.125",
+      "Microsoft.AspNetCore.TestHost >= 3.1.10",
       "Microsoft.NET.Test.Sdk >= 16.5.0",
       "NUnit >= 3.12.0",
-      "NUnit3TestAdapter >= 3.16.1"
+      "NUnit3TestAdapter >= 3.16.1",
+      "WebApi >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -4601,7 +4853,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\git\\dotnet-playground\\src\\WebApi.csproj": {
+              "projectPath": "C:\\git\\dotnet-playground\\src\\WebApi.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -4614,6 +4870,18 @@
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
         "dependencies": {
+          "FluentAssertions": {
+            "target": "Package",
+            "version": "[5.10.3, )"
+          },
+          "FluentAssertions.Web": {
+            "target": "Package",
+            "version": "[1.0.125, )"
+          },
+          "Microsoft.AspNetCore.TestHost": {
+            "target": "Package",
+            "version": "[3.1.10, )"
+          },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[16.5.0, )"
@@ -4638,6 +4906,9 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
