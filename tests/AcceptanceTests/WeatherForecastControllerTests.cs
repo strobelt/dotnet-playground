@@ -1,32 +1,23 @@
-﻿using FluentAssertions;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.TestHost;
+using AcceptanceTests.Core;
+using FluentAssertions;
 using NUnit.Framework;
 using System.Net.Http;
 using System.Threading.Tasks;
-using WebApi;
 
 namespace AcceptanceTests
 {
-    public class WeatherForecastControllerTests
+    public class WeatherForecastControllerTests : BaseAcceptanceTest
     {
-        private const string Url = "/WeatherForecast";
+        private const string url = "/WeatherForecast";
 
-        private HttpClient _client;
-        private HttpResponseMessage _response;
+        private HttpResponseMessage response;
 
         [OneTimeSetUp]
         public async Task OneTimeSetUp()
-        {
-            var server = new TestServer(new WebHostBuilder()
-                .UseStartup<Startup>());
-
-            _client = server.CreateClient();
-            _response = await _client.GetAsync(Url);
-        }
+            => response = await BackEndClient.GetAsync(url);
 
         [Test]
         public void ShouldReturnASuccessCode()
-            => _response.Should().Be2XXSuccessful();
+            => response.Should().Be2XXSuccessful();
     }
 }
