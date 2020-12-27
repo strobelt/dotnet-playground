@@ -18,8 +18,6 @@ namespace AcceptanceTests
 
         [Test]
         public void ShouldNavigateToHome()
-        {
-            homePage.Header.Should().Be("Home Page");
-        }
+            => homePage.Header.Should().Be("Home Page");
     }
 }

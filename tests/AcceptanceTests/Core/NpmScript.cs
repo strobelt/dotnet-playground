@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -27,7 +27,7 @@ namespace AcceptanceTests.Core
 
         public NpmScript(string scriptName = "dev") => this.scriptName = scriptName;
 
-        public async Task RunAsync(Action<string> output = null, int timeoutMs = 100000)
+        public async Task RunAsync(Action<string> output = null, int timeoutMs = 100000, string apiUrl = "https://localhost:5001")
         {
             lock (signal)
             {
@@ -40,7 +40,11 @@ namespace AcceptanceTests.Core
                         Arguments = $"/C npm run {scriptName}",
                         WorkingDirectory = @"C:\git\dotnet-playground\web",
                         CreateNoWindow = true,
-                        ErrorDialog = false
+                        ErrorDialog = false,
+                        Environment =
+                        {
+                            { "apiUrl", apiUrl }
+                        }
                     };
 
                     process = new Process { EnableRaisingEvents = true, StartInfo = info };
@@ -126,7 +130,8 @@ namespace AcceptanceTests.Core
                     var stdout = idGetter.StandardOutput.ReadToEnd();
                     var pids = stdout.Split("\n").Select(pid => int.Parse(pid)).ToList();
 
-                    foreach (var pid in pids) KillUnixProcess(pid);
+                    foreach (var pid in pids)
+                        KillUnixProcess(pid);
                 }
             }
 
