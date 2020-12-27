@@ -19,7 +19,7 @@ namespace AcceptanceTests.Core
 
         private Process process;
         public string Url { get; private set; }
-        public bool HasServer => !string.IsNullOrEmpty(Url);
+        public bool HasUrl => !string.IsNullOrEmpty(Url);
 
         public int ProcessId => process?.Id ?? 0;
 
@@ -37,7 +37,7 @@ namespace AcceptanceTests.Core
                     {
                         RedirectStandardOutput = true,
                         RedirectStandardError = true,
-                        Arguments = $"/C npx ng s",
+                        Arguments = $"/C npm run {scriptName}",
                         WorkingDirectory = @"C:\git\dotnet-playground\web",
                         CreateNoWindow = true,
                         ErrorDialog = false
